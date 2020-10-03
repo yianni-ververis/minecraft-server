@@ -1,4 +1,4 @@
-  #
+#
 # Ubuntu Dockerfile
 #
 # https://github.com/dockerfile/ubuntu
@@ -7,13 +7,16 @@
 # Pull base image.
 FROM ubuntu:18.04
 
-COPY 1.15.1/ /home/1.15.1/
+LABEL author=yiannisver@gmail.com
 
 # # Set environment variables.
-ENV HOME /home/1.15.1/
+ENV HOME /home
 
 # # Define working directory.
-WORKDIR /home/1.15.1
+WORKDIR /home
+
+COPY 1.15.1/ /home/1.15.1/
+COPY 1.16.3/ /home/1.16.3/
 
 # # Install.
 RUN \
@@ -22,11 +25,8 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y openjdk-8-jdk-headless && \
-  apt-get install -y byobu curl screen nano bash grep git htop man unzip vim wget && \
-  java -Xmx1G -Xms1G -jar server.jar nogui
+  apt-get install -y byobu curl screen nano bash grep git htop man unzip vim wget
+  # java -Xmx1G -Xms1G -jar server.jar nogui
 
 # Expose the listening port of your app
 EXPOSE 25565
-
-# # Define default command.
-# CMD ["bash"]

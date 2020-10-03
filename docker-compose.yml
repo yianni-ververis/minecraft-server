@@ -1,0 +1,15 @@
+version: "3.0"
+
+services:
+  minecraft:
+    image: 'yianniververis/minecraft-server:v0.2-k8s'
+    container_name: "minecraft"
+    command: "java -Xmx1G -Xms1G -jar /home/server.jar nogui"
+    environment:
+      - TZ=America/New_York
+    ports:
+      - 25565:25565
+    expose:
+      - '25565'
+    volumes:
+      - ./shared/minecraft/1.16.3/:/home:rw
