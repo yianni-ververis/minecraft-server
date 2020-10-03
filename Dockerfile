@@ -9,14 +9,15 @@ FROM ubuntu:18.04
 
 LABEL author=yiannisver@gmail.com
 
+# COPY 1.15.1/ /home/1.15.1/
+# COPY 1.16.3/ /home/1.16.3/
+
 # # Set environment variables.
 ENV HOME /home
 
 # # Define working directory.
 WORKDIR /home
 
-COPY 1.15.1/ /home/1.15.1/
-COPY 1.16.3/ /home/1.16.3/
 
 # # Install.
 RUN \
