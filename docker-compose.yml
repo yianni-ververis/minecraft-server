@@ -2,7 +2,7 @@ version: "3.0"
 
 services:
   minecraft:
-    image: 'yianniververis/minecraft-server:v0.4'
+    image: 'yianniververis/minecraft-server:v1.17'
     container_name: "minecraft"
     command: "java -Xmx1G -Xms1G -jar /home/server.jar nogui"
     environment:
