@@ -2,7 +2,7 @@ version: "3.0"
 
 services:
   minecraft:
-    image: 'yianniververis/minecraft-server:v0.2-k8s'
+    image: 'yianniververis/minecraft-server:v0.4'
     container_name: "minecraft"
     command: "java -Xmx1G -Xms1G -jar /home/server.jar nogui"
     environment:
@@ -12,4 +12,4 @@ services:
     expose:
       - '25565'
     volumes:
-      - ./shared/minecraft/1.16.3/:/home:rw
+      - ./shared/minecraft/1.17/:/home:rw
